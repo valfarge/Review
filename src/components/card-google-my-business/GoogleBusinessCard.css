@@ -1,0 +1,222 @@
+.google-business-card-small {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.google-business-card-small .thumbnails {
+  display: flex;
+  gap: 10px;
+}
+
+.google-business-card-small .thumbnails img {
+  width: 100px;
+  height: 50px;
+  border-radius: 4px;
+  image-rendering: pixelated;
+}
+
+.google-business-card-small h2 {
+  color: #1a73e8;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.google-business-card-small p {
+  margin-bottom: 0.5rem;
+}
+
+.google-business-card-small .expand-button {
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.google-business-card-small .expand-button:hover {
+  background-color: #0d47a1;
+}
+
+.google-business-card-small .opening-hours {
+  margin-top: 1rem;
+}
+
+.google-business-card-small .opening-hours h3 {
+  margin-bottom: 0.5rem;
+}
+
+.google-business-card-small .opening-hours ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.google-business-card-small .opening-hours ul li {
+  margin-bottom: 0.25rem;
+}
+
+.google-business-card-small .reviews {
+  margin-top: 1rem;
+}
+
+.google-business-card-small .review {
+  margin-bottom: 1rem;
+}
+
+.google-business-card-small .rating {
+  color: #ffab00;
+}
+
+.google-business-card-small .crowd-level {
+  margin-top: 1rem;
+}
+
+.google-business-card-small .crowd-level h3 {
+  margin-bottom: 0.5rem;
+}
+
+.google-business-card-small .progress-bars {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.google-business-card-small .progress-bar {
+  height: 80px; /* Hauteur de la jauge */
+  width: 20px; /* Largeur de la jauge */
+  background-color: #ddd; /* Couleur de fond de la jauge */
+  border-radius: 10px;
+  transition: background-color 0.3s ease; /* Transition douce de la couleur */
+  position: relative; /* Ajout de la position relative pour que l'animation puisse être positionnée */
+}
+
+/* Dégradé de couleur pour un niveau d'affluence faible */
+.google-business-card-small .progress-bar-low {
+  background-color: #4caf50; /* Couleur de base pour un niveau faible */
+}
+
+/* Dégradé de couleur pour un niveau d'affluence moyen */
+.google-business-card-small .progress-bar-medium {
+  background-color: #ffeb3b; /* Couleur de base pour un niveau moyen */
+}
+
+/* Dégradé de couleur pour un niveau d'affluence élevé */
+.google-business-card-small .progress-bar-high {
+  background-color: #f44336; /* Couleur de base pour un niveau élevé */
+}
+
+/* Animation de la couleur au survol */
+.google-business-card-small .progress-bar:hover {
+  background-image: linear-gradient(to top, #f44336, #ffeb3b, #4caf50); /* Dégradé de couleur de bas en haut */
+}
+
+
+.google-business-card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px; /* Marge négative pour compenser la marge des cartes individuelles */
+  }
+  
+  .google-business-card-small {
+    width: calc(33.33% - 40px); /* Ajustez la largeur de chaque carte en fonction de votre mise en page */
+    margin: 20px; /* Marge autour de chaque carte */
+  }
+  
+  @media (max-width: 768px) {
+    .google-business-card-small {
+      width: calc(50% - 40px); /* Pour deux cartes par ligne sur les petits écrans */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .google-business-card-small {
+      width: calc(100% - 40px); /* Pour une carte par ligne sur les écrans très petits */
+    }
+  }
+
+  
+
+  .review {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  
+  .profile-pic {
+    width: 38px;
+    height: 35px;
+    border-radius: 50%; /* Pour rendre l'image de profil ronde */
+    margin-right: 10px;
+  }
+  
+  .name {
+    font-weight: bold;
+  }
+  
+  .review-text {
+    flex: 1; /* Pour que le texte de l'avis occupe tout l'espace restant */
+  }
+  
+
+
+
+  .google-business-card-small .progress-bar::before,
+.google-business-card-small .progress-bar::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: blue; /* Couleur de l'eau */
+  border-radius: 10px; /* Pour s'assurer que l'eau suit la forme de la barre */
+}
+
+.google-business-card-small .progress-bar::before {
+  animation: water-rise 4s infinite alternate; /* Animation pour l'eau montante */
+}
+
+.google-business-card-small .progress-bar::after {
+  animation: water-fall 4s infinite alternate; /* Animation pour l'eau descendante */
+}
+
+@keyframes water-rise {
+  0% {
+    height: 0; /* Hauteur de départ */
+  }
+  100% {
+    height: 100%; /* Hauteur de fin */
+  }
+}
+
+@keyframes water-fall {
+  0% {
+    height: 100%; /* Hauteur de départ */
+  }
+  100% {
+    height: 0; /* Hauteur de fin */
+  }
+}
+
+.progress-bars-container-1 .progress-bar::before,
+.progress-bars-container-1 .progress-bar::after {
+  /* Animation pour la première carte */
+  animation-delay: 0s;
+}
+
+.progress-bars-container-2 .progress-bar::before,
+.progress-bars-container-2 .progress-bar::after {
+  /* Animation pour la deuxième carte */
+  animation-delay: 1s; /* Délai de 1 seconde */
+}
+
+.progress-bars-container-3 .progress-bar::before,
+.progress-bars-container-3 .progress-bar::after {
+  /* Animation pour la troisième carte */
+  animation-delay: 2s; /* Délai de 2 secondes */
+}
